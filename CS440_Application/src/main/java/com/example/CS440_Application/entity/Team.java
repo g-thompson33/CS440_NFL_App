@@ -7,11 +7,8 @@ public class Team {
     private String city;
     private String mascot;
     private String coach;
-
     private String stadium;
-
     private String division;
-
     private String record;
 
     // Constructors
