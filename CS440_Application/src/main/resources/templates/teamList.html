@@ -4,28 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team List</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+    <style>
+        .navbar-brand img.nfl-logo {
+            height: 1.5em; /* Adjust the height as needed */
+            width: auto; /* Allow the width to adjust according to the height */
+        }
+    </style>
 </head>
 <body>
-<h1>Team List</h1>
-<table>
-    <tr>
-        <th>Name</th>
-        <th>City</th>
-        <th>Mascot</th>
-        <th>Coach</th>
-        <th>Stadium</th>
-        <th>Division</th>
-        <th>Record</th>
-    </tr>
-    <tr th:each="team : ${teams}">
-        <td th:text="${team.name}"></td>
-        <td th:text="${team.city}"></td>
-        <td th:text="${team.mascot}"></td>
-        <td th:text="${team.coach}"></td>
-        <td th:text="${team.stadium}"></td>
-        <td th:text="${team.division}"></td>
-        <td th:text="${team.record}"></td>
-    </tr>
-</table>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+        NFL 2023-2024 Season
+        <img class="nfl-logo ml-2" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/National_Football_League_logo.svg/1200px-National_Football_League_logo.svg.png" alt="NFL Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="teams">Teams</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="schedule">Schedule</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="players">Players</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1>Team List</h1>
+    <div class="form-group">
+        <label for="divisionFilter">Filter by Division:</label>
+        <select id="divisionFilter" class="form-control">
+            <option value="">All Divisions</option>
+            <option value="AFC East">AFC East</option>
+            <option value="AFC North">AFC North</option>
+            <option value="AFC South">AFC South</option>
+            <option value="AFC West">AFC West</option>
+            <option value="NFC East">NFC East</option>
+            <option value="NFC North">NFC North</option>
+            <option value="NFC South">NFC South</option>
+            <option value="NFC West">NFC West</option>
+        </select>
+    </div>
+    <table id="teamTable" class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Mascot</th>
+            <th>Coach</th>
+            <th>Stadium</th>
+            <th>Division</th>
+            <th>Record</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="team : ${teams}" class="team-row">
+            <td th:text="${team.name}"></td>
+            <td th:text="${team.city}"></td>
+            <td th:text="${team.mascot}"></td>
+            <td th:text="${team.coach}"></td>
+            <td th:text="${team.stadium}"></td>
+            <td th:text="${team.division}"></td>
+            <td th:text="${team.record}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Bootstrap JS (Optional, if you need it) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-9aTmghdgrPVPtjBLqLCBxr8QbpzbBqWT1vWkQpN1kq8Qu2X4hP/xByAaAZs7Kx9E"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75jBh/kR0JKIb"
+        crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#divisionFilter').change(function () {
+            var division = $(this).val();
+            if (division === '') {
+                $('.team-row').show();
+            } else {
+                $('.team-row').hide();
+                $('.team-row').each(function () {
+                    if ($(this).find('td:nth-child(6)').text() === division) {
+                        $(this).show();
+                    }
+                });
+            }
+        });
+    });
+</script>
 </body>
 </html>

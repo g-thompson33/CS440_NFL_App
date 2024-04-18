@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TeamDAO {
-    private static final String SELECT_ALL_TEAMS = "SELECT * FROM Team";
+    private static final String SELECT_ALL_TEAMS = "SELECT * FROM Team ORDER BY name asc";
 
     public List<Team> getAllTeams() {
         List<Team> teams = new ArrayList<>();
