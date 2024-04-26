@@ -40,4 +40,11 @@ public class Players {
     public void setPosition(String position) {
         this.position = position;
     }
+
+    public int getPlayer_ID() { return getPlayer_ID(); }
+    public void setPlayer_ID(int Player_ID) {this.Player_ID = Player_ID;}
+
+    public int getNumber() {return Number; }
+    public void setNumber(int Number) {this.Number = Number;}
+
 }
