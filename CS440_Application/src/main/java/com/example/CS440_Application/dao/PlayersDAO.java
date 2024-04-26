@@ -19,7 +19,7 @@ import java.util.List;
 //Name VARCHAR(255) NOT NULL
 //);
 public class PlayersDAO {
-    private static final String SELECT_ALL_PLAYERS = "SELECT * FROM Players ORDER BY name asc";
+    private static final String SELECT_ALL_PLAYERS = "SELECT * FROM Player ORDER BY name asc";
 
     public List<Players> getAllPlayers() {
         List<Players> players = new ArrayList<>();

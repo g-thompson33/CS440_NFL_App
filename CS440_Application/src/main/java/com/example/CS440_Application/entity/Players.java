@@ -9,7 +9,7 @@ public class Players {
     private int Number;
 
     // Parameterized constructor
-    public Players(String name, String team, String postion, int Player_ID, int Number) {
+    public Players(String name, String team, String position, int Player_ID, int Number) {
         this.name = name;
         this.team = team;
         this.position = position;
@@ -41,8 +41,7 @@ public class Players {
         this.position = position;
     }
 
-    public int getPlayer_ID() { return getPlayer_ID(); }
-    public void setPlayer_ID(int Player_ID) {this.Player_ID = Player_ID;}
+    public int getPlayer_ID() { return Player_ID; }
 
     public int getNumber() {return Number; }
     public void setNumber(int Number) {this.Number = Number;}
