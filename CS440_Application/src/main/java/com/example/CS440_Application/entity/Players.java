@@ -8,6 +8,9 @@ public class Players {
     private int Player_ID;
     private int Number;
 
+    public Players(){
+
+    }
     // Parameterized constructor
     public Players(String name, String team, String position, int Player_ID, int Number) {
         this.name = name;

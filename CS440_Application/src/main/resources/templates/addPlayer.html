@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add Players</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #343a40; /* Navbar background color */
+            color: #fff; /* Text color */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header img {
+            height: 30px; /* Adjust the height of the NFL logo */
+            width: auto;
+        }
+
+        .container {
+            max-width: 800px;
+            margin-top: 20px; /* Adjust top margin */
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<!-- Header -->
+<div class="header">
+    <button class="btn btn-light" onclick="window.history.back()">Back</button>
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/National_Football_League_logo.svg/1200px-National_Football_League_logo.svg.png" alt="NFL Logo">
+</div>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add Player</title>
+</head>
+
+<body>
+<h2>Add Player</h2>
+<form action="#" th:action="@{/addPlayer}" th:object="${player}" method="post">
+    <label>Name: </label><input type="text" th:field="*{name}" /><br/>
+    <label>Team: </label><input type="text" th:field="*{team}" /><br/>
+    <label>Position: </label><input type="text" th:field="*{position}" /><br/>
+    <label>Player ID: </label><input type="text" th:field="*{player_ID}" /><br/>
+    <label>Number: </label><input type="text" th:field="*{number}" /><br/>
+    <input type="submit" value="Add Player" />
+</form>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-9aTmghdgrPVPtjBLqLCBxr8QbpzbBqWT1vWkQpN1kq8Qu2X4hP/xByAaAZs7Kx9E"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75jBh/kR0JKIb"
+        crossorigin="anonymous"></script>
+</html>
