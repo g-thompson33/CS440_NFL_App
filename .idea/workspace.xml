@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8eec7cc-dc7f-48a3-94a5-a500472639ce" name="Changes" comment="filter teams">
-      <change afterPath="$PROJECT_DIR$/CS440_Application/src/main/resources/templates/teamSchedule.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS440_Application/src/main/java/com/example/CS440_Application/controller/ScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CS440_Application/src/main/java/com/example/CS440_Application/controller/ScheduleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS440_Application/src/main/java/com/example/CS440_Application/dao/ScheduleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/CS440_Application/src/main/java/com/example/CS440_Application/dao/ScheduleDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS440_Application/src/main/java/com/example/CS440_Application/dao/TeamDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/CS440_Application/src/main/java/com/example/CS440_Application/dao/TeamDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS440_Application/src/main/java/com/example/CS440_Application/util/DatabaseConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CS440_Application/src/main/java/com/example/CS440_Application/util/DatabaseConnectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS440_Application/src/main/resources/templates/schedule.html" beforeDir="false" afterPath="$PROJECT_DIR$/CS440_Application/src/main/resources/templates/schedule.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS440_Application/src/main/resources/templates/teamList.html" beforeDir="false" afterPath="$PROJECT_DIR$/CS440_Application/src/main/resources/templates/teamList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_18_2024_6_22_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CS440_Application/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/CS440_Application/src/main/resources/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,26 +37,27 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2eena7DcoGICUGL4TPaqcAdWSxV" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;GT&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/grant/IdeaProjects/CS440_NFL_App&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Maven.CS440_Application [spring-boot:run].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Conner",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/grant/IdeaProjects/CS440_NFL_App",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="CS440_Application [spring-boot:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
       <MavenSettings>
@@ -78,6 +74,7 @@
                 <option value="spring-boot:run" />
               </list>
             </option>
+            <option name="multimoduleDir" />
             <option name="pomFileName" />
             <option name="profilesMap">
               <map />
