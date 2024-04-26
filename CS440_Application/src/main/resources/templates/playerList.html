@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+    <style>
+        .navbar-brand img.nfl-logo {
+            height: 1.5em; /* Adjust the height as needed */
+            width: auto; /* Allow the width to adjust according to the height */
+        }
+    </style>
+</head>
+<body>
+<!-- Rest of your Navbar and Filter Code -->
+
+<div class="container mt-5">
+    <h1>Player List</h1>
+    <!-- Filter code -->
+    <table id="playerTable" class="table">
+        <thead>
+        <tr>
+            <th>Player ID</th>
+            <th>Name</th>
+            <th>Team</th>
+            <th>Position</th>
+            <th>Number</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="player : ${players}">
+            <td th:text="${player.Player_ID}"></td>
+            <td th:text="${player.name}"></td>
+            <td th:text="${player.team}"></td>
+            <td th:text="${player.position}"></td>
+            <td th:text="${player.Number}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Your Bootstrap and jQuery Scripts -->
+<script>
+    // Your existing script for filtering
+</script>
+</body>
+</html>
