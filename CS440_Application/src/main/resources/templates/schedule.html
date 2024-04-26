@@ -1,85 +1,79 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedules</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
           crossorigin="anonymous">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding-top: 60px; /* To accommodate fixed navbar */
-        }
-
         .navbar-brand img.nfl-logo {
-            height: 30px; /* Adjust the height of the NFL logo */
-            width: auto;
-            margin-right: 10px;
-        }
-
-        .navbar {
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .container {
-            max-width: 800px;
-        }
-
-        h1 {
-            margin-bottom: 30px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 30px;
-        }
-
-        th, td {
-            border: 1px solid #dee2e6;
-            padding: 10px;
+            height: 1.5em; /* Adjust the height as needed */
+            width: auto; /* Allow the width to adjust according to the height */
         }
     </style>
 </head>
 <body>
+
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-            <img class="nfl-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/National_Football_League_logo.svg/1200px-National_Football_League_logo.svg.png" alt="NFL Logo">
-            NFL 2023-2024 Season
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="teams">Teams</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="schedule">Schedule <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="players">Players</a>
-                </li>
-            </ul>
-        </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+        NFL 2023-2024 Season
+        <img class="nfl-logo ml-2" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/National_Football_League_logo.svg/1200px-National_Football_League_logo.svg.png" alt="NFL Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="teams">Teams</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="schedule">Schedule</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="players">Players</a>
+            </li>
+        </ul>
     </div>
 </nav>
 
-<!-- Main content -->
 <div class="container mt-5">
-    <h1>Schedules</h1>
+    <h1>Games by Week</h1>
+
+    <div class="form-group">
+        <label for="weekFilter">Filter by Week:</label>
+        <select id="weekFilter" class="form-control">
+            <option value="">All Weeks</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+        </select>
+    </div>
 
     <!-- Schedule Table -->
-    <table class="table table-bordered">
+    <table id="scheduleTable" class="table table-bordered">
         <thead class="thead-dark">
         <tr>
             <th>Team</th>
@@ -89,17 +83,16 @@
         </thead>
         <tbody>
         <!-- Iterate over schedules and populate table rows -->
-        <tr th:each="schedule : ${schedules}">
+        <tr th:each="schedule : ${schedules}" class="schedule-row">
             <td th:text="${schedule.team}"></td>
             <td th:text="${schedule.opponent}"></td>
             <td th:text="${schedule.week}"></td>
         </tr>
         </tbody>
     </table>
+</div>
 
-    
-
-<!-- Bootstrap JS and jQuery (Optional, if needed) -->
+<!-- Bootstrap JS (Optional, if you need it) -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -112,14 +105,16 @@
 
 <script>
     $(document).ready(function () {
-        $('#divisionFilter').change(function () {
-            var division = $(this).val();
-            if (division === '') {
-                $('.team-row').show();
+        $('#weekFilter').change(function () {
+            var week = $(this).val();
+            console.log(week);
+            if (week === '') {
+                $('.schedule-row').show();
             } else {
-                $('.team-row').hide();
-                $('.team-row').each(function () {
-                    if ($(this).find('td:nth-child(6)').text() === division) {
+                $('.schedule-row').hide();
+                $('.schedule-row').each(function () {
+                    console.log($(this).find('td:nth-child(3)').text());
+                    if ($(this).find('td:nth-child(3)').text() === week) {
                         $(this).show();
                     }
                 });
@@ -127,6 +122,7 @@
         });
     });
 </script>
+
 
 </body>
 </html>

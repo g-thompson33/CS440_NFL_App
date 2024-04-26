@@ -82,6 +82,7 @@
             <td th:text="${team.stadium}"></td>
             <td th:text="${team.division}"></td>
             <td th:text="${team.record}"></td>
+            <td><a th:href="@{/schedule/{team}(team=${team.name})}">Show Schedule</a></td>
         </tr>
         </tbody>
     </table>

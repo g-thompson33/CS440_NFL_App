@@ -2,6 +2,7 @@ package com.example.CS440_Application.dao;
 
 import com.example.CS440_Application.entity.Team;
 import com.example.CS440_Application.util.DatabaseConnectionManager;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,6 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class TeamDAO {
     private static final String SELECT_ALL_TEAMS = "SELECT * FROM Team ORDER BY name asc";
 
