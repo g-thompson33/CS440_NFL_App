@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team List</title>
+    <title>Schedules</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
@@ -46,43 +46,47 @@
 </nav>
 
 <div class="container mt-5">
-    <h1>Team List</h1>
+    <h1>Games by Week</h1>
+
     <div class="form-group">
-        <label for="divisionFilter">Filter by Division:</label>
-        <select id="divisionFilter" class="form-control">
-            <option value="">All Divisions</option>
-            <option value="AFC East">AFC East</option>
-            <option value="AFC North">AFC North</option>
-            <option value="AFC South">AFC South</option>
-            <option value="AFC West">AFC West</option>
-            <option value="NFC East">NFC East</option>
-            <option value="NFC North">NFC North</option>
-            <option value="NFC South">NFC South</option>
-            <option value="NFC West">NFC West</option>
+        <label for="weekFilter">Filter by Week:</label>
+        <select id="weekFilter" class="form-control">
+            <option value="">All Weeks</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
         </select>
     </div>
-    <table id="teamTable" class="table">
-        <thead>
+
+    <!-- Schedule Table -->
+    <table id="scheduleTable" class="table table-bordered">
+        <thead class="thead-dark">
         <tr>
-            <th>Name</th>
-            <th>City</th>
-            <th>Mascot</th>
-            <th>Coach</th>
-            <th>Stadium</th>
-            <th>Division</th>
-            <th>Record</th>
+            <th>Team</th>
+            <th>Opponent</th>
+            <th>Week</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="team : ${teams}" class="team-row">
-            <td th:text="${team.name}"></td>
-            <td th:text="${team.city}"></td>
-            <td th:text="${team.mascot}"></td>
-            <td th:text="${team.coach}"></td>
-            <td th:text="${team.stadium}"></td>
-            <td th:text="${team.division}"></td>
-            <td th:text="${team.record}"></td>
-            <td><a th:href="@{/schedule/{team}(team=${team.name})}">Show Schedule</a></td>
+        <!-- Iterate over schedules and populate table rows -->
+        <tr th:each="schedule : ${schedules}" class="schedule-row">
+            <td th:text="${schedule.team}"></td>
+            <td th:text="${schedule.opponent}"></td>
+            <td th:text="${schedule.week}"></td>
         </tr>
         </tbody>
     </table>
@@ -101,14 +105,16 @@
 
 <script>
     $(document).ready(function () {
-        $('#divisionFilter').change(function () {
-            var division = $(this).val();
-            if (division === '') {
-                $('.team-row').show();
+        $('#weekFilter').change(function () {
+            var week = $(this).val();
+            console.log(week);
+            if (week === '') {
+                $('.schedule-row').show();
             } else {
-                $('.team-row').hide();
-                $('.team-row').each(function () {
-                    if ($(this).find('td:nth-child(6)').text() === division) {
+                $('.schedule-row').hide();
+                $('.schedule-row').each(function () {
+                    console.log($(this).find('td:nth-child(3)').text());
+                    if ($(this).find('td:nth-child(3)').text() === week) {
                         $(this).show();
                     }
                 });
@@ -116,5 +122,7 @@
         });
     });
 </script>
+
+
 </body>
 </html>
