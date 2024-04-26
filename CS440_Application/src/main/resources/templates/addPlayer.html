@@ -1,10 +1,5 @@
 <!DOCTYPE html>
-
-
-
 <html xmlns:th="http://www.thymeleaf.org">
-
-
 <head>
     <meta charset="UTF-8">
     <title>Add Players</title>
@@ -15,6 +10,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Set background color */
         }
 
         .header {
@@ -34,55 +30,100 @@
 
         .container {
             max-width: 800px;
-            margin-top: 20px; /* Adjust top margin */
+            margin: 20px auto; /* Center align and adjust margin */
+            background-color: #fff; /* Form background color */
+            padding: 20px; /* Add padding */
+            border-radius: 8px; /* Add border radius */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
         }
 
-        h1 {
-            margin-bottom: 30px;
+        h2 {
+            margin-bottom: 20px; /* Adjust margin */
+            color: #343a40; /* Heading color */
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 30px;
+        label {
+            font-weight: bold; /* Make labels bold */
         }
 
-        th, td {
-            border: 1px solid #dee2e6;
-            padding: 10px;
+        select, input[type="text"], input[type="submit"] {
+            width: 100%; /* Make inputs full width */
+            margin-bottom: 15px; /* Add bottom margin */
+            padding: 10px; /* Add padding */
+            border: 1px solid #ced4da; /* Add border */
+            border-radius: 4px; /* Add border radius */
+            box-sizing: border-box; /* Include padding and border in width */
+        }
+
+        input[type="submit"] {
+            background-color: #343a40; /* Button background color */
+            color: #fff; /* Button text color */
+            cursor: pointer; /* Add pointer cursor */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #23272b; /* Change background color on hover */
         }
     </style>
 </head>
-
+<body>
 <!-- Header -->
 <div class="header">
     <button class="btn btn-light" onclick="window.history.back()">Back</button>
     <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/National_Football_League_logo.svg/1200px-National_Football_League_logo.svg.png" alt="NFL Logo">
 </div>
 
-
-<head>
-    <meta charset="UTF-8">
-    <title>Add Player</title>
-</head>
-
-<body>
-<h2>Add Player</h2>
-<form action="#" th:action="@{/addPlayer}" th:object="${player}" method="post">
-    <label>Name: </label><input type="text" th:field="*{name}" /><br/>
-    <label>Team: </label><input type="text" th:field="*{team}" /><br/>
-    <label>Position: </label><input type="text" th:field="*{position}" /><br/>
-    <label>Number: </label><input type="text" th:field="*{number}" /><br/>
-    <input type="submit" value="Add Player" />
-</form>
+<div class="container">
+    <h2>Add Player</h2>
+    <form action="#" th:action="@{/addPlayer}" th:object="${player}" method="post">
+        <label>Name: </label><input type="text" th:field="*{name}" /><br/>
+        <label>Team: </label>
+        <select th:field="*{team}">
+            <option value="">Select Team</option>
+            <option value="Cardinals">Arizona Cardinals</option>
+            <option value="Falcons">Atlanta Falcons</option>
+            <option value="Ravens">Baltimore Ravens</option>
+            <option value="Bills">Buffalo Bills</option>
+            <option value="Panthers">Carolina Panthers</option>
+            <option value="Bears">Chicago Bears</option>
+            <option value="Bengals">Cincinnati Bengals</option>
+            <option value="Browns">Cleveland Browns</option>
+            <option value="Cowboys">Dallas Cowboys</option>
+            <option value="Broncos">Denver Broncos</option>
+            <option value="Lions">Detroit Lions</option>
+            <option value="Packers">Green Bay Packers</option>
+            <option value="Texans">Houston Texans</option>
+            <option value="Colts">Indianapolis Colts</option>
+            <option value="Jaguars">Jacksonville Jaguars</option>
+            <option value="Chiefs">Kansas City Chiefs</option>
+            <option value="Raiders">Las Vegas Raiders</option>
+            <option value="Chargers">Los Angeles Chargers</option>
+            <option value="Rams">Los Angeles Rams</option>
+            <option value="Dolphins">Miami Dolphins</option>
+            <option value="Vikings">Minnesota Vikings</option>
+            <option value="Patriots">New England Patriots</option>
+            <option value="Saints">New Orleans Saints</option>
+            <option value="Giants">New York Giants</option>
+            <option value="Jets">New York Jets</option>
+            <option value="Eagles">Philadelphia Eagles</option>
+            <option value="Steelers">Pittsburgh Steelers</option>
+            <option value="49ers">San Francisco 49ers</option>
+            <option value="Seahawks">Seattle Seahawks</option>
+            <option value="Buccaneers">Tampa Bay Buccaneers</option>
+            <option value="Titans">Tennessee Titans</option>
+            <option value="Commanders">Washington Commanders</option>
+        </select><br/>
+        <label>Position: </label>
+        <select th:field="*{position}">
+            <option value="">Select Position</option>
+            <option value="Runningback">Runningback</option>
+            <option value="Quarterback">Quarterback</option>
+            <option value="Wide Receiver">Wide Receiver</option>
+            <option value="Tight End">Tight End</option>
+        </select><br/>
+        <label>Number: </label><input type="text" th:field="*{number}" /><br/>
+        <input type="submit" value="Add Player" />
+    </form>
+</div>
 </body>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-9aTmghdgrPVPtjBLqLCBxr8QbpzbBqWT1vWkQpN1kq8Qu2X4hP/xByAaAZs7Kx9E"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75jBh/kR0JKIb"
-        crossorigin="anonymous"></script>
 </html>
