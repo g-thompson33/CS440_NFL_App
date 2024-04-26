@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Players</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Set background color */
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #343a40; /* Navbar background color */
+            color: #fff; /* Text color */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header img {
+            height: 30px; /* Adjust the height of the NFL logo */
+            width: auto;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto; /* Center align and adjust margin */
+            background-color: #fff; /* Form background color */
+            padding: 20px; /* Add padding */
+            border-radius: 8px; /* Add border radius */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
+        }
+
+        h2 {
+            margin-bottom: 20px; /* Adjust margin */
+            color: #343a40; /* Heading color */
+        }
+
+        label {
+            font-weight: bold; /* Make labels bold */
+        }
+
+        select, input[type="text"], input[type="submit"] {
+            width: 100%; /* Make inputs full width */
+            margin-bottom: 15px; /* Add bottom margin */
+            padding: 10px; /* Add padding */
+            border: 1px solid #ced4da; /* Add border */
+            border-radius: 4px; /* Add border radius */
+            box-sizing: border-box; /* Include padding and border in width */
+        }
+
+        input[type="submit"] {
+            background-color: #343a40; /* Button background color */
+            color: #fff; /* Button text color */
+            cursor: pointer; /* Add pointer cursor */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #23272b; /* Change background color on hover */
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<div class="header">
+    <button class="btn btn-light" onclick="window.history.back()">Back</button>
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/National_Football_League_logo.svg/1200px-National_Football_League_logo.svg.png" alt="NFL Logo">
+</div>
+
+<div class="container">
+    <h2>Add Player</h2>
+    <form action="#" th:action="@{/addPlayer}" th:object="${player}" method="post">
+        <label>Name: </label><input type="text" th:field="*{name}" /><br/>
+        <label>Team: </label>
+        <select th:field="*{team}">
+            <option value="">Select Team</option>
+            <option value="Cardinals">Arizona Cardinals</option>
+            <option value="Falcons">Atlanta Falcons</option>
+            <option value="Ravens">Baltimore Ravens</option>
+            <option value="Bills">Buffalo Bills</option>
+            <option value="Panthers">Carolina Panthers</option>
+            <option value="Bears">Chicago Bears</option>
+            <option value="Bengals">Cincinnati Bengals</option>
+            <option value="Browns">Cleveland Browns</option>
+            <option value="Cowboys">Dallas Cowboys</option>
+            <option value="Broncos">Denver Broncos</option>
+            <option value="Lions">Detroit Lions</option>
+            <option value="Packers">Green Bay Packers</option>
+            <option value="Texans">Houston Texans</option>
+            <option value="Colts">Indianapolis Colts</option>
+            <option value="Jaguars">Jacksonville Jaguars</option>
+            <option value="Chiefs">Kansas City Chiefs</option>
+            <option value="Raiders">Las Vegas Raiders</option>
+            <option value="Chargers">Los Angeles Chargers</option>
+            <option value="Rams">Los Angeles Rams</option>
+            <option value="Dolphins">Miami Dolphins</option>
+            <option value="Vikings">Minnesota Vikings</option>
+            <option value="Patriots">New England Patriots</option>
+            <option value="Saints">New Orleans Saints</option>
+            <option value="Giants">New York Giants</option>
+            <option value="Jets">New York Jets</option>
+            <option value="Eagles">Philadelphia Eagles</option>
+            <option value="Steelers">Pittsburgh Steelers</option>
+            <option value="49ers">San Francisco 49ers</option>
+            <option value="Seahawks">Seattle Seahawks</option>
+            <option value="Buccaneers">Tampa Bay Buccaneers</option>
+            <option value="Titans">Tennessee Titans</option>
+            <option value="Commanders">Washington Commanders</option>
+        </select><br/>
+        <label>Position: </label>
+        <select th:field="*{position}">
+            <option value="">Select Position</option>
+            <option value="Runningback">Runningback</option>
+            <option value="Quarterback">Quarterback</option>
+            <option value="Wide Receiver">Wide Receiver</option>
+            <option value="Tight End">Tight End</option>
+        </select><br/>
+        <label>Number: </label><input type="text" th:field="*{number}" /><br/>
+        <input type="submit" value="Add Player" />
+    </form>
+</div>
+</body>
+</html>

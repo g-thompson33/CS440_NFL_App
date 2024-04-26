@@ -19,7 +19,7 @@ import java.util.List;
 //Name VARCHAR(255) NOT NULL
 //);
 public class PlayersDAO {
-    private static final String SELECT_ALL_PLAYERS = "SELECT * FROM Player ORDER BY name asc";
+    private static final String SELECT_ALL_PLAYERS = "SELECT * FROM Player ORDER BY Player_ID asc";
 
     public List<Players> getAllPlayers() {
         List<Players> players = new ArrayList<>();
@@ -41,4 +41,20 @@ public class PlayersDAO {
         }
         return players;
     }
+
+    public void addPlayer(Players player) {
+        String sql = "INSERT INTO Player (Name, Team, Position, Number) VALUES (?,?,?,?)";
+        try (Connection connection = DatabaseConnectionManager.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, player.getName());
+            statement.setString(2, player.getTeam());
+            statement.setString(3, player.getPosition());
+            statement.setInt(4, player.getNumber());
+
+            statement.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace();  // Consider logging this error appropriately
+        }
+    }
+
 }
