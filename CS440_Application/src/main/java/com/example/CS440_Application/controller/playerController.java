@@ -27,7 +27,7 @@ public class playerController {
     @PostMapping("/addPlayer")
     public String addPlayer(@ModelAttribute("player") Players player) {
         playersDAO.addPlayer(player);
-        return "redirect:/playerList"; // Redirect to players list page after adding player
+        return "redirect:/players"; // Redirect to players list page after adding player
     }
 
 }
