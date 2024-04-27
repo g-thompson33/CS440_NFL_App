@@ -2,7 +2,7 @@
 Database application for NFL stats'
 
 Instructions to set up mySql database
-1. Open and execute the sql file on your local instance MySql80 server
+1. Open and execute the sql file on your local instance MySql80 server localhost:3306
 2. Take note of your root password because you will need it for the application to connect 
 
 Instructions to set up project:
