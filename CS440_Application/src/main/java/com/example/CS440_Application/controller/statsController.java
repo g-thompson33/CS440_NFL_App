@@ -2,6 +2,7 @@ package com.example.CS440_Application.controller;
 
 import com.example.CS440_Application.dao.ScheduleDAO;
 import com.example.CS440_Application.dao.StatsDAO;
+import com.example.CS440_Application.entity.PlayerStats;
 import com.example.CS440_Application.entity.Schedule;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,16 +15,16 @@ import java.util.List;
 public class statsController {
     private final StatsDAO statsDAO = new StatsDAO();
 
-    @GetMapping("/stats")
+    @GetMapping("/playerStats")
     public String getAllStats(Model model) {
-        model.addAttribute("stats", StatsDAO.getAllStats());
-        return "stats"; // View name (Thymeleaf template)
+        model.addAttribute("playerStats", StatsDAO.getAllStats());
+        return "playerStats"; // View name (Thymeleaf template)
     }
 
-    @GetMapping("/stats/{id}")
-    public String viewSchedule(@PathVariable("id") String id, Model model) {
-        List<Schedule> playerStats = StatsDAO.getStatsById(id);
-        model.addAttribute("playerStats", playerStats);
-        return "playerStats";
-    }
+//    @GetMapping("/playerStats/{id}")
+//    public String viewSchedule(@PathVariable("id") int id, Model model) {
+//        List<PlayerStats> playerStats = StatsDAO.getStatsByID(id);
+//        model.addAttribute("playerStats", playerStats);
+//        return "playerStats";
+//    }
 }

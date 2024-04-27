@@ -35,7 +35,7 @@ public class PlayerStats {
     }
 
     // Getters and Setters
-    public int getPlayer_ID() {
+    public int getPlayerID() {
         return Player_ID;
     }
 
@@ -51,7 +51,7 @@ public class PlayerStats {
         this.Week = Week;
     }
 
-    public int getRushing_Attempts() {
+    public int getRushingAttempts() {
         return Rushing_Attempts;
     }
 
@@ -59,7 +59,7 @@ public class PlayerStats {
         this.Rushing_Attempts = Rushing_Attempts;
     }
 
-    public int getRushing_Yards() {
+    public int getRushingYards() {
         return Rushing_Yards;
     }
 
@@ -75,7 +75,7 @@ public class PlayerStats {
         this.Receptions = Receptions;
     }
 
-    public int getReceiving_Yards() {
+    public int getReceivingYards() {
         return Receiving_Yards;
     }
 
@@ -83,7 +83,7 @@ public class PlayerStats {
         this.Receiving_Yards = Receiving_Yards;
     }
 
-    public int getPassing_Attempts() {
+    public int getPassingAttempts() {
         return Passing_Attempts;
     }
 
@@ -91,7 +91,7 @@ public class PlayerStats {
         this.Passing_Attempts = Passing_Attempts;
     }
 
-    public int getPassing_Yards() {
+    public int getPassingYards() {
         return Passing_Yards;
     }
 
