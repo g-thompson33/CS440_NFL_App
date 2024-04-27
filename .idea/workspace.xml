@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8eec7cc-dc7f-48a3-94a5-a500472639ce" name="Changes" comment="filter teams">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_18_2024_6_22_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/CS440_Application/src/main/java/com/example/CS440_Application/controller/statsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CS440_Application/src/main/java/com/example/CS440_Application/dao/StatsDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CS440_Application/src/main/java/com/example/CS440_Application/entity/PlayerStats.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CS440_Application/src/main/resources/templates/playerStats.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,15 +20,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="GT" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,7 +40,7 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2eena7DcoGICUGL4TPaqcAdWSxV" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -48,7 +52,7 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "William's-Branch",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/grant/IdeaProjects/CS440_NFL_App",
     "project.structure.last.edited": "Libraries",
@@ -72,6 +76,7 @@
                 <option value="spring-boot:run" />
               </list>
             </option>
+            <option name="multimoduleDir" />
             <option name="pomFileName" />
             <option name="profilesMap">
               <map />

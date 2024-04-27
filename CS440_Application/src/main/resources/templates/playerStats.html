@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Statistics</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+        NFL 2023-2024 Season
+        <img class="nfl-logo ml-2" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/National_Football_League_logo.svg/1200px-National_Football_League_logo.svg.png" alt="NFL Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="teams">Teams</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="schedule">Schedule</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="playerStats">Player Stats <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Player Statistics</h1>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Player ID</th>
+            <th>Week</th>
+            <th>Rushing Attempts</th>
+            <th>Rushing Yards</th>
+            <th>Receptions</th>
+            <th>Receiving Yards</th>
+            <th>Passing Attempts</th>
+            <th>Passing Yards</th>
+            <th>Touchdowns</th>
+            <th>Interceptions</th>
+            <th>Fumbles</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="stat : ${playerStats}">
+            <td th:text="${stat.Player_ID}"></td>
+            <td th:text="${stat.Week}"></td>
+            <td th:text="${stat.Rushing_Attempts}"></td>
+            <td th:text="${stat.Rushing_Yards}"></td>
+            <td th:text="${stat.Receptions}"></td>
+            <td th:text="${stat.Receiving_Yards}"></td>
+            <td th:text="${stat.Passing_Attempts}"></td>
+            <td th:text="${stat.Passing_Yards}"></td>
+            <td th:text="${stat.Touchdowns}"></td>
+            <td th:text="${stat.Interceptions}"></td>
+            <td th:text="${stat.Fumbles}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-EVSTQN3/azprG1Anm3QDcgEAGJOuSMagZ4YSwZjZj5i72vmny5arche4SygXMgF4" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+G+Y8J6meZO0I4ELIJLUoyq2V0p4kNJzo8" crossorigin="anonymous"></script>
+</body>
+</html>
